@@ -1,0 +1,71 @@
+﻿@model IEnumerable<MVC.ViewModels.TripsVM>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+@using (Html.BeginForm())
+{
+    <p style="font-size: 12px;">
+        <b style="font-style:italic">Find by FinalDestination: </b>@Html.TextBox("search")
+        <input type="submit" value="Search" />
+    </p>
+}
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.MeetPlace)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FinalDestination)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DistanceKms)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TripPrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Details)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MeetPlace)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FinalDestination)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DistanceKms)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TripPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Details)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+    }
+
+</table>

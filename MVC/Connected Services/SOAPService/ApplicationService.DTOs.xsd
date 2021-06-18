@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/ApplicationService.DTOs" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/ApplicationService.DTOs" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfTravellerDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TravellerDTO" nillable="true" type="tns:TravellerDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTravellerDTO" nillable="true" type="tns:ArrayOfTravellerDTO" />
+  <xs:complexType name="TravellerDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Age" type="xs:int" />
+      <xs:element minOccurs="0" name="DesiredPrice" type="xs:double" />
+      <xs:element minOccurs="0" name="EndDestination" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PhoneNumber" type="xs:long" />
+      <xs:element minOccurs="0" name="StartDestination" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TravellerDTO" nillable="true" type="tns:TravellerDTO" />
+  <xs:complexType name="ArrayOfDriverDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DriverDTO" nillable="true" type="tns:DriverDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDriverDTO" nillable="true" type="tns:ArrayOfDriverDTO" />
+  <xs:complexType name="DriverDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Age" type="xs:int" />
+      <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PhoneNumber" type="xs:long" />
+      <xs:element minOccurs="0" name="TripPrice" type="xs:double" />
+      <xs:element minOccurs="0" name="VehicleBrand" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VehicleType" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DriverDTO" nillable="true" type="tns:DriverDTO" />
+  <xs:complexType name="ArrayOfTripDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TripDTO" nillable="true" type="tns:TripDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTripDTO" nillable="true" type="tns:ArrayOfTripDTO" />
+  <xs:complexType name="TripDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Date" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Details" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DistanceKms" type="xs:int" />
+      <xs:element minOccurs="0" name="FinalDestination" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="MeetPlace" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TripPrice" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TripDTO" nillable="true" type="tns:TripDTO" />
+</xs:schema>
